@@ -194,7 +194,7 @@ class _BusinessDashboardScreenState extends State<BusinessDashboardScreen>
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                            color: const Color(0x2e47688b), width: 1),
+                            color: const CIColors.detaiBorderColor, width: 1),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -227,7 +227,7 @@ class _BusinessDashboardScreenState extends State<BusinessDashboardScreen>
                       width: double.infinity,
                       height: 160,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF47688b),
+                        color: CIColors.textColor,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       padding: const EdgeInsets.all(24),
@@ -289,7 +289,7 @@ class _BusinessDashboardScreenState extends State<BusinessDashboardScreen>
                           height: 6,
                           decoration: BoxDecoration(
                             color: i == _currentBanner
-                                ? const Color(0xFF47688b)
+                                ? CIColors.textColor
                                 : const Color(0xFFb0c4d8),
                             borderRadius: BorderRadius.circular(3),
                           ),
