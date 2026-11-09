@@ -132,7 +132,7 @@ class _FeeTablesScreenState extends State<FeeTablesScreen> {
                       children: [
                         FaIcon(
                           FontAwesomeIcons.circleExclamation,
-                          color: Color(0xFFc7d3e0),
+                          color: CIColors.hintColor,
                           size: 30,
                         ),
                         Padding(
@@ -141,7 +141,7 @@ class _FeeTablesScreenState extends State<FeeTablesScreen> {
                             textAlign: TextAlign.center,
                             'You currently have no Received Fee Tables',
                             style: TextStyle(
-                              color: Color(0xff7493b4),
+                              color: CIColors.textColorAlt,
                             ),
                           ),
                         ),
