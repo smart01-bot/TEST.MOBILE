@@ -194,7 +194,7 @@ class _BusinessDashboardScreenState extends State<BusinessDashboardScreen>
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                            color: const CIColors.detaiBorderColor, width: 1),
+                            color: CIColors.detaiBorderColor, width: 1),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
