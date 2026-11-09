@@ -263,7 +263,7 @@ class _BusinessDashboardScreenState extends State<BusinessDashboardScreen>
                                   child: Text(
                                     _banners[_currentBanner]['cta']!,
                                     style: const TextStyle(
-                                      color: Color(0xFF47688b),
+                                      color: CIColors.textColor,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 13,
                                     ),
