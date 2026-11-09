@@ -257,10 +257,20 @@ class _MainAppState extends State<MainApp> with WidgetsBindingObserver {
             elevation: 0,
             iconTheme: IconThemeData(color: CIColors.primaryColor),
           ),
-          colorScheme: ColorScheme.fromSwatch(
-            primarySwatch: Colors.blue,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: CIColors.primaryColor,
+            brightness: Brightness.light,
           ).copyWith(
-            secondary: CIColors.secondaryColor, // Secondary color
+            primary: CIColors.primaryColor,
+            onPrimary: CIColors.whiteColor,
+            secondary: CIColors.secondaryColor,
+            onSecondary: CIColors.whiteColor,
+            tertiary: CIColors.amberColor,
+            onTertiary: CIColors.primaryColor,
+            surface: CIColors.whiteColor,
+            onSurface: CIColors.textColor,
+            error: CIColors.errorColor,
+            onError: CIColors.whiteColor,
           ),
           textTheme: TextTheme(
             bodyLarge: TextStyle(
