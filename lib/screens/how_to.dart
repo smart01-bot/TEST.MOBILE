@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../components/loading_screen.dart';
 import '../components/main_top_bar.dart';
@@ -95,22 +94,20 @@ class _HowToScreenState extends State<HowToScreen> {
         FontAwesomeIcons.solidCircleQuestion; // fallback if not found
   }
 
+  void _showSupportNotConfigured() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('TEST support contact details have not been configured yet.'),
+      ),
+    );
+  }
+
   Future<void> _makePhoneCall(String phoneNumber) async {
-    final Uri phoneUri = Uri(scheme: 'tel', path: phoneNumber);
-    if (await canLaunchUrl(phoneUri)) {
-      await launchUrl(phoneUri);
-    }
+    _showSupportNotConfigured();
   }
 
   Future<void> _sendEmail(String emailAddress) async {
-    final Uri emailUri = Uri(
-      scheme: 'mailto',
-      path: emailAddress,
-    );
-
-    if (await canLaunchUrl(emailUri)) {
-      await launchUrl(emailUri);
-    }
+    _showSupportNotConfigured();
   }
 
   @override
@@ -328,7 +325,7 @@ class _HowToScreenState extends State<HowToScreen> {
                                           GestureDetector(
                                             onTap: () {
                                               _sendEmail(
-                                                  "info@cardinformatics.co.tz");
+                                                  '');
                                             },
                                             child: Container(
                                               padding: EdgeInsets.symmetric(
