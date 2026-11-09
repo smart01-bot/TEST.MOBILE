@@ -105,7 +105,7 @@ class _MainTopBarState extends State<MainTopBar> {
           Radius.circular(12),
         ),
         border: Border.all(
-          color: Color(0x66afcbe8),
+          color: CIColors.inputBorderColor,
           width: 1,
         ),
       ),
