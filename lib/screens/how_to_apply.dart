@@ -197,7 +197,7 @@ class _HowToApplyScreenState extends State<HowToApplyScreen> {
             ),
             SizedBox(height: 16),
             Text(
-                'Baadhi ya Taasisi za Fedha zinaweza kukuhitaji kufungua akaunti nao kabla ya kukupa mkopo. Kwa maelezo zaidi tafadhali wasiliana nasi kupitia nambari +255 222 610 310 au tuma barua pepe kwenda info@cardinformatics.co.tz. Saa zetu za kazi kuanzia saa 3:00 asubuhi mpaka saa 10:00 jioni, Jumatatu hadi Ijumaa.'),
+                'Baadhi ya Taasisi za Fedha zinaweza kukuhitaji kufungua akaunti nao kabla ya kukupa mkopo. Kwa maelezo zaidi, tafadhali wasiliana moja kwa moja na Taasisi ya Fedha husika.'),
             SizedBox(height: 16),
             Text('Tunakutakia siku njema,'),
             SizedBox(height: 0),
