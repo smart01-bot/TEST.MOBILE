@@ -60,7 +60,7 @@ class _BusinessLoanApplicationsScreenState
       case 'application accepted':
         return const Color(0xFF2e7d32);
       case 'fee table accepted':
-        return const Color(0xFF1565c0);
+        return CIColors.secondaryColor;
       case 'pending':
         return const Color(0xFF795548);
       case 'declined':
@@ -75,7 +75,7 @@ class _BusinessLoanApplicationsScreenState
       case 'application accepted':
         return const Color(0xFFe8f5e9);
       case 'fee table accepted':
-        return const Color(0xFFe3f2fd);
+        return CIColors.softBlueColor;
       case 'pending':
         return const Color(0xFFefebe9);
       case 'declined':
@@ -113,7 +113,7 @@ class _BusinessLoanApplicationsScreenState
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFe8f2fb),
+                        color: CIColors.softBlueColor,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Row(
@@ -173,7 +173,7 @@ class _AppRow extends StatelessWidget {
               Container(
                 width: 24, height: 24,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFe8f2fb),
+                  color: CIColors.softBlueColor,
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: Center(child: Text('$index', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: CIColors.secondaryColor))),
