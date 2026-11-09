@@ -84,7 +84,7 @@ class ResetPasswordVerificationScreenState
                           borderRadius: BorderRadius.circular(16),
                           color: Colors.white,
                           border: Border.all(
-                            color: Color(0x66afcbe8), // Border color
+                            color: CIColors.inputBorderColor, // Border color
                             width: 1.0,
                             // Border width
                           ),
