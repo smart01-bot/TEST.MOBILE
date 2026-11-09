@@ -118,9 +118,12 @@ class _FinancingSolutionsUtilizationRequestScreenState
                 const Text('Download below:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: CIColors.textColor)),
                 const SizedBox(height: 10),
                 GestureDetector(
-                  onTap: () async {
-                    final uri = Uri.parse('https://ddev.cardinformatics.tz/asset-financing/lpo/Request%20Letters/Utilization%20Request%20Letter.pdf');
-                    if (await canLaunchUrl(uri)) launchUrl(uri);
+                  onTap: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('The request-letter template is not included in this standalone TEST build.'),
+                      ),
+                    );
                   },
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
