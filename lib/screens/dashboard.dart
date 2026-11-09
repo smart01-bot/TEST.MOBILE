@@ -281,7 +281,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         width: double.infinity,
                         height: 200,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF5b7fa6),
+                          color: const CIColors.textColorAlt,
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: CarouselSlider(
@@ -310,7 +310,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.white,
-                                      foregroundColor: const Color(0xFF5b7fa6),
+                                      foregroundColor: const CIColors.textColorAlt,
                                       elevation: 0,
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(50),
@@ -357,7 +357,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.white,
-                                      foregroundColor: const Color(0xFF5b7fa6),
+                                      foregroundColor: const CIColors.textColorAlt,
                                       elevation: 0,
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(50),
@@ -398,7 +398,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
-                            color: const Color(0x2e47688b),
+                            color: const CIColors.detaiBorderColor,
                             width: 1,
                           ),
                         ),
