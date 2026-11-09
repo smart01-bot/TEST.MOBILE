@@ -52,7 +52,7 @@ class RegisterChooserPersonalScreenState
                           borderRadius: BorderRadius.circular(16),
                           color: Colors.white,
                           border: Border.all(
-                            color: Color(0x66afcbe8), // Border color
+                            color: CIColors.inputBorderColor, // Border color
                             width: 1.0,
                             // Border width
                           ),
@@ -108,13 +108,13 @@ class RegisterChooserPersonalScreenState
                                   child: Container(
                                     decoration: BoxDecoration(
                                       color: isTanzanianPressed
-                                          ? Color(0xffd2e8ff)
-                                          : Color(0xfff6fbff),
+                                          ? CIColors.inputFocusFillColor
+                                          : CIColors.inputFillColor,
                                       borderRadius: BorderRadius.circular(12),
                                       border: Border.all(
                                         width: 2,
                                         color: isTanzanianPressed
-                                            ? Color(0xff003977)
+                                            ? CIColors.primaryColor
                                             : CIColors.accentColor,
                                       ),
                                     ),
@@ -136,7 +136,7 @@ class RegisterChooserPersonalScreenState
                                           "Tanzanian",
                                           style: TextStyle(
                                             color: isTanzanianPressed
-                                                ? Color(0xff003977)
+                                                ? CIColors.primaryColor
                                                 : CIColors.accentColor,
                                             fontSize: 16,
                                           ),
@@ -162,13 +162,13 @@ class RegisterChooserPersonalScreenState
                                   child: Container(
                                     decoration: BoxDecoration(
                                       color: isForeignerPressed
-                                          ? Color(0xffd2e8ff)
-                                          : Color(0xfff6fbff),
+                                          ? CIColors.inputFocusFillColor
+                                          : CIColors.inputFillColor,
                                       borderRadius: BorderRadius.circular(12),
                                       border: Border.all(
                                         width: 2,
                                         color: isForeignerPressed
-                                            ? Color(0xff003977)
+                                            ? CIColors.primaryColor
                                             : CIColors.accentColor,
                                       ),
                                     ),
@@ -190,7 +190,7 @@ class RegisterChooserPersonalScreenState
                                           "Non-Tanzanian",
                                           style: TextStyle(
                                             color: isForeignerPressed
-                                                ? Color(0xff003977)
+                                                ? CIColors.primaryColor
                                                 : CIColors.accentColor,
                                             fontSize: 16,
                                           ),
