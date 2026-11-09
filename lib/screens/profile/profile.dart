@@ -421,44 +421,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             SizedBox(
                               height: 16,
                             ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(16.0),
-                              child: Image.network(
-                                _profileData['image'],
-                                width: 150,
-                                height: 150,
-                                fit: BoxFit
-                                    .cover, // Controls how the image fits the box (e.g., cover, contain, fill)
-                                loadingBuilder: (BuildContext context,
-                                    Widget child,
-                                    ImageChunkEvent? loadingProgress) {
-                                  if (loadingProgress == null) return child;
-                                  return Center(
-                                    child: CircularProgressIndicator(
-                                      value:
-                                          loadingProgress.expectedTotalBytes !=
-                                                  null
-                                              ? loadingProgress
-                                                      .cumulativeBytesLoaded /
-                                                  (loadingProgress
-                                                          .expectedTotalBytes ??
-                                                      1)
-                                              : null,
-                                    ),
-                                  );
-                                },
-                                errorBuilder: (BuildContext context,
-                                    Object error, StackTrace? stackTrace) {
-                                  return Container(
-                                    width: 150,
-                                    height: 150,
-                                    decoration: BoxDecoration(
-                                        color: const Color.fromARGB(
-                                            255, 208, 221, 235),
-                                        borderRadius:
-                                            BorderRadius.circular(12)),
-                                  );
-                                },
+                            Container(
+                              width: 150,
+                              height: 150,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFDCE6F1),
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: const Center(
+                                child: FaIcon(
+                                  FontAwesomeIcons.solidUser,
+                                  size: 64,
+                                  color: Color(0xFF5478A0),
+                                ),
                               ),
                             ),
                             Padding(
