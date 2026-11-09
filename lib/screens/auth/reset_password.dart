@@ -295,7 +295,7 @@ class ResetPasswordScreenState extends State<ResetPasswordScreen> {
             case "account-locked":
               setState(() {
                 _formError =
-                    "This account has been locked. Please contact us for further details. \nPhone: +255 222 610 310 \nEmail: info@cardinformatics.co.tz";
+                    "This account has been locked. Please contact the app administrator for assistance.";
               });
               break;
             default:
