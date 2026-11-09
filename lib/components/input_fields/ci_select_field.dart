@@ -61,12 +61,12 @@ class _CISelectFieldState extends State<CISelectField> {
           vertical: 8,
         ),
         decoration: BoxDecoration(
-          color: _isFocused ? Color(0xffe7f3ff) : Color(0xfff5faff),
+          color: _isFocused ? CIColors.inputFocusFillColor : CIColors.inputFillColor,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: widget.haveError
                 ? CIColors.errorBorder
-                : (_isFocused ? CIColors.secondaryColor : Color(0xffdcefff)),
+                : (_isFocused ? CIColors.secondaryColor : CIColors.inputBorderColor),
             width: 1.5,
           ),
         ),
