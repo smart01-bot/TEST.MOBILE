@@ -184,7 +184,7 @@ class _MarketplaceLoanApplicationsScreenState
                       children: [
                         FaIcon(
                           FontAwesomeIcons.circleExclamation,
-                          color: Color(0xFFc7d3e0),
+                          color: CIColors.hintColor,
                           size: 30,
                         ),
                         Padding(
@@ -193,7 +193,7 @@ class _MarketplaceLoanApplicationsScreenState
                             textAlign: TextAlign.center,
                             'There are currently no marketplace loan applications',
                             style: TextStyle(
-                              color: Color(0xff7493b4),
+                              color: CIColors.textColorAlt,
                             ),
                           ),
                         ),
