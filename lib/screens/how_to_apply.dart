@@ -150,7 +150,7 @@ class _HowToApplyScreenState extends State<HowToApplyScreen> {
               padding: EdgeInsets.only(left: 16),
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xffb9e5fa),
+                  backgroundColor: CIColors.softBlueColor,
                   foregroundColor: CIColors.primaryColor,
                 ),
                 onPressed: () {
@@ -175,7 +175,7 @@ class _HowToApplyScreenState extends State<HowToApplyScreen> {
               padding: EdgeInsets.only(left: 16),
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xffb9e5fa),
+                  backgroundColor: CIColors.softBlueColor,
                   foregroundColor: CIColors.primaryColor,
                 ),
                 onPressed: () {
