@@ -733,9 +733,10 @@ class RegisterBusinessScreenState extends State<RegisterBusinessScreen> {
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      launchUrl(
-                                        Uri.parse(
-                                            '${AppConfig.serverUrl}/terms/terms_condition.php'),
+                                      ScaffoldMessenger.of(context).showSnackBar(
+                                        const SnackBar(
+                                          content: Text('Terms document is not bundled in this standalone TEST build.'),
+                                        ),
                                       );
                                     },
                                     child: Text(
@@ -775,9 +776,10 @@ class RegisterBusinessScreenState extends State<RegisterBusinessScreen> {
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      launchUrl(
-                                        Uri.parse(
-                                            '${AppConfig.serverUrl}/terms/Privacy_Statement_fin.php'),
+                                      ScaffoldMessenger.of(context).showSnackBar(
+                                        const SnackBar(
+                                          content: Text('Privacy document is not bundled in this standalone TEST build.'),
+                                        ),
                                       );
                                     },
                                     child: Text(
