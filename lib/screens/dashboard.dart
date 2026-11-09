@@ -104,7 +104,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         width: double.infinity,
                         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                         decoration: BoxDecoration(
-                          color: CIColors.amberSoft,
+                          color: CIColors.amberSoftColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: const Text(
