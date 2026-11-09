@@ -160,9 +160,9 @@ class _BusinessLoanNewScreenState extends State<BusinessLoanNewScreen> {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       decoration: BoxDecoration(
-        color: const CIColors.inputFillColor,
+        color: CIColors.inputFillColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: const CIColors.inputBorderColor, width: 1.5),
+        border: Border.all(color: CIColors.inputBorderColor, width: 1.5),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -200,7 +200,7 @@ class _BusinessLoanNewScreenState extends State<BusinessLoanNewScreen> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: const CIColors.detaiBorderColor, width: 1),
+                    border: Border.all(color: CIColors.detaiBorderColor, width: 1),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
