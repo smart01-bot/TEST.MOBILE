@@ -1,5 +1,5 @@
 name: test_mobile
-description: "Standalone TEST mobile demo application (offline)"
+description: "Standalone TEST mobile demo application"
 publish_to: 'none'
 version: 0.1.0+3
 
