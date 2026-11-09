@@ -29,9 +29,9 @@ class CiPill extends StatelessWidget {
       "border": Color(0xffce736b),
     },
     "blue": {
-      "text": Color(0xff569bcc),
-      "background": Color(0xffe8f7ff),
-      "border": Color(0xff469ccd),
+      "text": Color(0xff2878D0),
+      "background": Color(0xffE8F0FA),
+      "border": Color(0xff2878D0),
     },
     "yellow-green": {
       "text": Color(0xff70962e),
