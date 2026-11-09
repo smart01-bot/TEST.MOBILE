@@ -108,7 +108,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: const Text(
-                          'OFFLINE DEMO — Card Informatics services are disconnected.',
+                          'STANDALONE DEMO — Card Informatics backend and Firebase are disconnected.',
                           textAlign: TextAlign.center,
                           style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
                         ),
