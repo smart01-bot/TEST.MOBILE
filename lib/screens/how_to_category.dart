@@ -150,23 +150,29 @@ class _HowToCategoryScreenState extends State<HowToCategoryScreen> {
           child: _isLoading
               ? LoadingScreen()
               : _tutorials.isEmpty
-                  ? Image.network('https://cardinformatics.tz/tutor/$gifName',
-                      loadingBuilder: (BuildContext context, Widget child,
-                          ImageChunkEvent? loadingProgress) {
-                      if (loadingProgress == null) return child;
-                      return Center(
-                          child: Column(
+                  ? Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(24),
+                      decoration: BoxDecoration(
+                        color: CIColors.whiteColor,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: const Column(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          CircularProgressIndicator(
-                            value: loadingProgress.expectedTotalBytes != null
-                                ? loadingProgress.cumulativeBytesLoaded /
-                                    loadingProgress.expectedTotalBytes!
-                                : null,
+                          FaIcon(
+                            FontAwesomeIcons.bookOpen,
+                            size: 34,
+                            color: CIColors.secondaryColor,
                           ),
-                          Text('Loading...')
+                          SizedBox(height: 12),
+                          Text(
+                            'Help content is not bundled in this offline demo.',
+                            textAlign: TextAlign.center,
+                          ),
                         ],
-                      ));
-                    })
+                      ),
+                    )
                   // Text('No tutorial content for now')
                   : SizedBox(
                       width: double.infinity,

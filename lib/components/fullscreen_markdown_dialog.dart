@@ -1,16 +1,13 @@
-import 'package:test_mobile/components/loading_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:http/http.dart' as http;
-import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/colors.dart';
-import '../helpers/get_markdown_stylesheet.dart';
 
+/// Displays a local notice instead of fetching remote Card Informatics content.
 class FullScreenMarkdownDialog extends StatelessWidget {
   final String title;
+  // Retained for compatibility; this URL is intentionally never opened/fetched.
   final String markdownUrl;
 
   const FullScreenMarkdownDialog({
@@ -19,46 +16,29 @@ class FullScreenMarkdownDialog extends StatelessWidget {
     required this.markdownUrl,
   });
 
-  Future<String> fetchMarkdown() async {
-    final response = await http.get(Uri.parse(markdownUrl));
-    if (response.statusCode == 200) {
-      return response.body;
-    } else {
-      throw Exception('Failed to load markdown');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        statusBarColor: CIColors.canvasBGColor, // Sets the background color
-        statusBarIconBrightness:
-            Brightness.dark, // Use dark icons if bg is light
-        statusBarBrightness: Brightness.light, // iOS status bar behavior
+      value: const SystemUiOverlayStyle(
+        statusBarColor: CIColors.canvasBGColor,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.light,
       ),
       child: Dialog.fullscreen(
-          child: Material(
-        color: CIColors.canvasBGColor,
-        child: SafeArea(
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+        child: Material(
+          color: CIColors.canvasBGColor,
+          child: SafeArea(
             child: Column(
               children: [
                 SizedBox(height: MediaQuery.of(context).padding.top),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        width: 8,
-                      ),
                       Expanded(
                         child: Text(
                           title,
-                          style: TextStyle(
+                          style: const TextStyle(
                             overflow: TextOverflow.ellipsis,
                             color: CIColors.primaryColor,
                             fontWeight: FontWeight.w600,
@@ -66,59 +46,26 @@ class FullScreenMarkdownDialog extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 8,
-                      ),
                       IconButton(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        icon: FaIcon(
+                        onPressed: () => Navigator.of(context).pop(),
+                        icon: const FaIcon(
                           FontAwesomeIcons.solidCircleXmark,
                           color: CIColors.primaryColor,
                           size: 18,
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
-                Expanded(
-                  child: Container(
-                    clipBehavior: Clip.hardEdge,
-                    margin: EdgeInsets.only(
-                      left: 16,
-                      right: 16,
-                      bottom: 8,
-                    ),
-                    decoration: BoxDecoration(
-                      color: CIColors.whiteColor,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: FutureBuilder<String>(
-                      future: fetchMarkdown(),
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
-                          return const Center(
-                              child: LoadingScreen(
-                                  description: "Fetching content"));
-                        } else if (snapshot.hasError) {
-                          return Center(
-                              child: Text('Error: ${snapshot.error}'));
-                        } else {
-                          return Markdown(
-                            data: snapshot.data ?? '',
-                            styleSheet: getCustomMarkdownStyle(context),
-                            onTapLink: (text, href, title) {
-                              if (href != null) {
-                                launchUrl(
-                                  Uri.parse(href),
-                                );
-                              }
-                            },
-                          );
-                        }
-                      },
+                const Expanded(
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(24),
+                      child: Text(
+                        'Remote help documents are disabled in this standalone TEST build.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: CIColors.textColor),
+                      ),
                     ),
                   ),
                 ),
@@ -126,10 +73,7 @@ class FullScreenMarkdownDialog extends StatelessWidget {
             ),
           ),
         ),
-      )
-          // =========
-
-          ),
+      ),
     );
   }
 }

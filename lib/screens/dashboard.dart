@@ -100,6 +100,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     spacing: 8,
                     children: [
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: CIColors.amberSoft,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Text(
+                          'OFFLINE DEMO — Card Informatics services are disconnected.',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                        ),
+                      ),
                       if (thereIsUpdate)
                         Container(
                           padding: EdgeInsets.all(16),
@@ -184,51 +197,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 SizedBox(
                                   width: 8,
                                 ),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    (authProvider.userData['profile-image'] as String).replaceAll('//dashboarddiond', '/dashboarddiond'),
-                                    width: 50,
-                                    height: 50,
-                                    fit: BoxFit
-                                        .cover, // Controls how the image fits the box (e.g., cover, contain, fill)
-                                    loadingBuilder: (BuildContext context,
-                                        Widget child,
-                                        ImageChunkEvent? loadingProgress) {
-                                      if (loadingProgress == null) return child;
-                                      return Center(
-                                        child: CircularProgressIndicator(
-                                          value: loadingProgress
-                                                      .expectedTotalBytes !=
-                                                  null
-                                              ? loadingProgress
-                                                      .cumulativeBytesLoaded /
-                                                  (loadingProgress
-                                                          .expectedTotalBytes ??
-                                                      1)
-                                              : null,
-                                        ),
-                                      );
-                                    },
-                                    errorBuilder: (BuildContext context,
-                                        Object error, StackTrace? stackTrace) {
-                                      return Container(
-                                        width: 50,
-                                        height: 50,
-                                        decoration: BoxDecoration(
-                                            color: const Color.fromARGB(
-                                                255, 208, 221, 235),
-                                            borderRadius:
-                                                BorderRadius.circular(8)),
-                                        child: Center(
-                                          child: FaIcon(
-                                            FontAwesomeIcons.solidUser,
-                                            size: 24,
-                                            color: const Color.fromARGB(180, 84, 120, 160),
-                                          ),
-                                        ),
-                                      );
-                                    },
+                                Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFDCE6F1),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Center(
+                                    child: FaIcon(
+                                      FontAwesomeIcons.solidUser,
+                                      size: 24,
+                                      color: const Color(0xFF5478A0),
+                                    ),
                                   ),
                                 ),
                                 Column(
