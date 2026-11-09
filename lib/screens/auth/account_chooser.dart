@@ -51,7 +51,7 @@ class _AccountChooserState extends State<AccountChooser> {
                         "Choose Account Type",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Color(0xff47688b),
+                          color: CIColors.textColor,
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
                         ),
@@ -74,13 +74,13 @@ class _AccountChooserState extends State<AccountChooser> {
                             child: Container(
                               decoration: BoxDecoration(
                                 color: isPersonalPressed
-                                    ? Color(0xffd2e8ff)
-                                    : Color(0xfff6fbff),
+                                    ? CIColors.inputFocusFillColor
+                                    : CIColors.inputFillColor,
                                 borderRadius: BorderRadius.circular(12),
                                 border: Border.all(
                                   width: 2,
                                   color: isPersonalPressed
-                                      ? Color(0xff003977)
+                                      ? CIColors.primaryColor
                                       : CIColors.accentColor,
                                 ),
                               ),
@@ -101,7 +101,7 @@ class _AccountChooserState extends State<AccountChooser> {
                                     "Personal",
                                     style: TextStyle(
                                       color: isPersonalPressed
-                                          ? Color(0xff003977)
+                                          ? CIColors.primaryColor
                                           : CIColors.accentColor,
                                       fontSize: 16,
                                     ),
@@ -127,13 +127,13 @@ class _AccountChooserState extends State<AccountChooser> {
                             child: Container(
                               decoration: BoxDecoration(
                                 color: isBusinessPressed
-                                    ? Color(0xffd2e8ff)
-                                    : Color(0xfff6fbff),
+                                    ? CIColors.inputFocusFillColor
+                                    : CIColors.inputFillColor,
                                 borderRadius: BorderRadius.circular(12),
                                 border: Border.all(
                                   width: 2,
                                   color: isBusinessPressed
-                                      ? Color(0xff003977)
+                                      ? CIColors.primaryColor
                                       : CIColors.accentColor,
                                 ),
                               ),
@@ -154,7 +154,7 @@ class _AccountChooserState extends State<AccountChooser> {
                                     "Asset Financing",
                                     style: TextStyle(
                                       color: isBusinessPressed
-                                          ? Color(0xff003977)
+                                          ? CIColors.primaryColor
                                           : CIColors.accentColor,
                                       fontSize: 16,
                                     ),
