@@ -61,9 +61,9 @@ class _CITableRowState extends State<CITableRow> {
                 ? EdgeInsets.all(0)
                 : EdgeInsets.only(bottom: 5),
             decoration: BoxDecoration(
-              color: _isPressed ? Color(0xfff3fcff) : CIColors.whiteColor,
+              color: _isPressed ? CIColors.inputFocusFillColor : CIColors.whiteColor,
               border: Border.all(
-                color: _isPressed ? Color(0x6939aad1) : CIColors.whiteColor,
+                color: _isPressed ? Color(0x692878D0) : CIColors.whiteColor,
                 width: 1,
               ),
               borderRadius: BorderRadius.all(
