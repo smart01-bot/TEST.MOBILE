@@ -183,7 +183,7 @@ class _MyLoanApplicationsScreenState extends State<MyLoanApplicationsScreen> {
                       children: [
                         FaIcon(
                           FontAwesomeIcons.circleExclamation,
-                          color: Color(0xFFc7d3e0),
+                          color: CIColors.hintColor,
                           size: 30,
                         ),
                         Padding(
@@ -192,7 +192,7 @@ class _MyLoanApplicationsScreenState extends State<MyLoanApplicationsScreen> {
                             textAlign: TextAlign.center,
                             'You currently have no loan applications',
                             style: TextStyle(
-                              color: Color(0xff7493b4),
+                              color: CIColors.textColorAlt,
                             ),
                           ),
                         ),
