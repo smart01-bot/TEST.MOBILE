@@ -99,10 +99,10 @@ class _ChangeBirthdateScreenState extends State<ChangeBirthdateScreen> {
                 vertical: 12,
               ),
               decoration: BoxDecoration(
-                color: const Color(0xfff5faff),
+                color: CIColors.inputFillColor,
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: const Color(0xffdcefff),
+                  color: CIColors.inputBorderColor,
                   width: 1.5,
                 ),
               ),
