@@ -1,40 +1,22 @@
 import 'dart:async';
-import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:http/http.dart' as http;
 
+/// Offline demo connectivity stream. It never probes a remote endpoint.
 class ConnectivityService {
-  final _controller = StreamController<bool>.broadcast();
+  final StreamController<bool> _controller =
+      StreamController<bool>.broadcast();
 
-  late final StreamSubscription _connectivitySubscription;
-
-  final String checkUrl;
-
-  ConnectivityService({required this.checkUrl}) {
-    // Listen to network type changes (WiFi, Mobile, none)
-    _connectivitySubscription =
-        Connectivity().onConnectivityChanged.listen((_) {
-      checkInternetConnection();
-    });
-
-    // Initial check
-    checkInternetConnection();
+  ConnectivityService() {
+    _controller.add(true);
   }
 
   Stream<bool> get connectivityStream => _controller.stream;
 
-  /// Custom method to check internet using your endpoint
   Future<void> checkInternetConnection() async {
-    try {
-      final response = await http.head(Uri.parse(checkUrl)).timeout(Duration(seconds: 5));
-      final isOnline = response.statusCode == 200;
-      _controller.sink.add(isOnline);
-    } catch (_) {
-      _controller.sink.add(false);
-    }
+    // No network connectivity check is performed in standalone TEST.
+    _controller.add(true);
   }
 
   void dispose() {
-    _connectivitySubscription.cancel();
     _controller.close();
   }
 }

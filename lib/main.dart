@@ -1,18 +1,10 @@
-import 'dart:async';
-
 import 'package:test_mobile/screens/auth/device_verification.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-import 'package:firebase_core/firebase_core.dart';
-import 'config.dart';
-import 'firebase_options.dart';
 
 import 'constants/colors.dart';
-import 'handlers/open_notification_route_handler.dart';
 import 'providers/api_provider.dart';
 import 'providers/auth_provider.dart';
 import 'providers/notification_provider.dart';
@@ -85,49 +77,27 @@ import 'services/navigator_service.dart';
 import 'services/route_observer.dart';
 import 'wrappers/decider_wrapper.dart';
 
-Future<void> main() async {
-  
-
-
-
-  runZonedGuarded(() async{
-    WidgetsFlutterBinding.ensureInitialized();
-
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: CIColors.canvasBGColor, // Dark blue background
-    statusBarIconBrightness: Brightness.dark, // White icons for Android
-    statusBarBrightness: Brightness.light, // White icons for iOS
+    statusBarColor: CIColors.canvasBGColor,
+    statusBarIconBrightness: Brightness.dark,
+    statusBarBrightness: Brightness.light,
   ));
 
-
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => APIProvider()),
+        ChangeNotifierProvider(create: (_) => NotificationProvider()),
+        ChangeNotifierProvider(create: (_) => OverlayProvider()),
+      ],
+      child: const MainApp(),
+    ),
   );
-
-  // Pass all uncaught "fatal" errors from the framework to Crashlytics
-  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
-
-
-    runApp(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => AuthProvider()),
-          ChangeNotifierProvider(create: (_) => APIProvider()),
-          ChangeNotifierProvider(create: (_) => NotificationProvider()),
-          ChangeNotifierProvider(create: (_) => OverlayProvider()),
-          // ChangeNotifierProvider(create: (_) => InternetProvider()),
-        ],
-        child: MainApp(),
-      ),
-    );
-  }, (error, stackTrace) {
-    // Record all other uncaught errors
-    FirebaseCrashlytics.instance.recordError(error, stackTrace, fatal: true);
-  });
-  //FirebaseCrashlytics.instance.recordError);
 }
-
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
@@ -136,76 +106,23 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> with WidgetsBindingObserver {
-  late AuthProvider authProvider;
-  late APIProvider apiProvider;
-  late NotificationProvider _notificationProvider;
   late ConnectivityService _connectivityService;
-  bool _listenerInitialized = false;
 
   @override
   void initState() {
     super.initState();
-    apiProvider = Provider.of<APIProvider>(context, listen: false);
-    authProvider = Provider.of<AuthProvider>(context, listen: false);
-    _notificationProvider =
-        Provider.of<NotificationProvider>(context, listen: false);
-    _connectivityService = ConnectivityService(
-      checkUrl: "${AppConfig.apiUrl}check-net",
-    );
+    _connectivityService = ConnectivityService();
 
     WidgetsBinding.instance.addObserver(this);
-
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!_listenerInitialized) {
-        _listenerInitialized = true;
-        // 🔹 Foreground messages
-        FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-          _notificationProvider.addNotification(message.data);
-        });
-      }
-
-      // 🔹 App opened from terminated state
-      if (context.mounted) checkInitialMessage(context);
-
-      OverlayProvider overlayProvider =
+      if (!mounted) return;
+      final overlayProvider =
           Provider.of<OverlayProvider>(context, listen: false);
-
       InactivityTimer().onTimeout = () {
         overlayProvider.showAppLockOverlay();
         overlayProvider.isTimeoutLocked = true;
-        // Handle user inactivity here, e.g., logout or show warning
-        // Trigger logout, lock screen, etc.
       };
     });
-
-    // 🔹 App opened from background by tapping the notification
-    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) {
-          if (context.mounted) {
-            // openNotificationHandler(
-            //   context,
-            //   message.data,
-            //   navigatorKey: navigatorKey,
-            // );
-            openNotificationRouteHandler(context, message.data);
-          }
-        }
-      });
-    });
-
-    FirebaseMessaging.instance.getAPNSToken().then((token) {});
-  }
-
-  Future<void> checkInitialMessage(context) async {
-    RemoteMessage? initialMessage =
-        await FirebaseMessaging.instance.getInitialMessage();
-    if (initialMessage != null) {
-      if (context.mounted) {
-        openNotificationRouteHandler(context, initialMessage.data);
-      }
-      // if (mounted) openNotificationHandler(context, initialMessage.data);
-    } else {}
   }
 
   @override
