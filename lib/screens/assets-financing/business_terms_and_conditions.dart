@@ -111,7 +111,7 @@ class _BusinessTermsAndConditionsScreenState
             _sectionTitle('Incident Reporting'),
             SizedBox(height: 8),
             _bodyText(
-              'I will cooperate willingly with The Company and any applicable Government Regulatory Authorities on any investigation of any privacy, security, or cyber incidents and, if directed by any of these, I will voluntarily relinquish all access to, and use of, The Company\'s online electronic system during the period of investigation and/or law enforcement action. If my online account has been compromised in any way, I will notify The Company immediately, by either calling the Contact Center or sending The Company an electronic message to info@cardinformatics.co.tz.',
+              'I will cooperate willingly with The Company and any applicable Government Regulatory Authorities on any investigation of any privacy, security, or cyber incidents and, if directed by any of these, I will voluntarily relinquish all access to, and use of, The Company\'s online electronic system during the period of investigation and/or law enforcement action. If my online account has been compromised in any way, I will notify The Company immediately through its designated customer-support channel.',
             ),
             SizedBox(height: 20),
             _sectionTitle('Penalties for Misuse'),
