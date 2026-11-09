@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "tz.cardinformatics" "\0"
-            VALUE "FileDescription", "card_informatics_mobile_app" "\0"
+            VALUE "FileDescription", "TEST" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "card_informatics_mobile_app" "\0"
+            VALUE "InternalName", "TEST" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2025 tz.cardinformatics. All rights reserved." "\0"
-            VALUE "OriginalFilename", "card_informatics_mobile_app.exe" "\0"
-            VALUE "ProductName", "card_informatics_mobile_app" "\0"
+            VALUE "OriginalFilename", "test_mobile.exe" "\0"
+            VALUE "ProductName", "TEST" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

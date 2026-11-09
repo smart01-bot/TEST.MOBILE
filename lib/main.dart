@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:card_informatics_mobile_app/screens/auth/device_verification.dart';
+import 'package:test_mobile/screens/auth/device_verification.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';

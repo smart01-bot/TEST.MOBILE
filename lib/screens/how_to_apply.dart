@@ -201,7 +201,7 @@ class _HowToApplyScreenState extends State<HowToApplyScreen> {
             SizedBox(height: 16),
             Text('Tunakutakia siku njema,'),
             SizedBox(height: 0),
-            Text('Timu ya CARD Informatics!'),
+            Text('Timu ya TEST!'),
             SizedBox(height: 16),
           ],
         ),

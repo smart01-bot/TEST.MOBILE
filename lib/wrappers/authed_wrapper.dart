@@ -1,4 +1,4 @@
-import 'package:card_informatics_mobile_app/providers/notification_provider.dart';
+import 'package:test_mobile/providers/notification_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:screen_capture_restrictions/screen_capture_restrictions.dart';

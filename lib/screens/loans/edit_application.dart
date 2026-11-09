@@ -1,5 +1,5 @@
-import 'package:card_informatics_mobile_app/components/input_fields/ci_file.dart';
-import 'package:card_informatics_mobile_app/helpers/format_with_thousands_separator.dart';
+import 'package:test_mobile/components/input_fields/ci_file.dart';
+import 'package:test_mobile/helpers/format_with_thousands_separator.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

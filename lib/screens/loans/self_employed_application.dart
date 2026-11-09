@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_final_fields
 
-import 'package:card_informatics_mobile_app/constants/water_supply_authorities.dart';
+import 'package:test_mobile/constants/water_supply_authorities.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';

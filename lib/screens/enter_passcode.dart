@@ -1,4 +1,4 @@
-import 'package:card_informatics_mobile_app/services/storage_service.dart';
+import 'package:test_mobile/services/storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

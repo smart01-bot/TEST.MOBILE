@@ -1,4 +1,4 @@
-import 'package:card_informatics_mobile_app/constants/colors.dart';
+import 'package:test_mobile/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 

@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:card_informatics_mobile_app/components/input_fields/ci_field.dart';
-import 'package:card_informatics_mobile_app/helpers/get_time_lapsed_widget.dart';
+import 'package:test_mobile/components/input_fields/ci_field.dart';
+import 'package:test_mobile/helpers/get_time_lapsed_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';

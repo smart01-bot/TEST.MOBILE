@@ -1,4 +1,4 @@
-import 'package:card_informatics_mobile_app/constants/button_style_main.dart';
+import 'package:test_mobile/constants/button_style_main.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';

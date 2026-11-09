@@ -215,7 +215,7 @@ class _BusinessDashboardScreenState extends State<BusinessDashboardScreen>
                               'Email', authProvider.userData['email'] ?? ''),
                           const SizedBox(height: 4),
                           _infoRow('Role',
-                              authProvider.userData['role'] ?? 'CARD Informatics Client'),
+                              authProvider.userData['role'] ?? 'TEST Client'),
                         ],
                       ),
                     ),

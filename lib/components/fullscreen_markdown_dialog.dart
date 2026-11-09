@@ -1,4 +1,4 @@
-import 'package:card_informatics_mobile_app/components/loading_screen.dart';
+import 'package:test_mobile/components/loading_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';

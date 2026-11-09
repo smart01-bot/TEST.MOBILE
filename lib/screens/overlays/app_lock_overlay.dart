@@ -1,5 +1,5 @@
 
-import 'package:card_informatics_mobile_app/screens/enter_passcode.dart';
+import 'package:test_mobile/screens/enter_passcode.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,4 +1,4 @@
-import 'package:card_informatics_mobile_app/wrappers/non_authed_wrapper.dart';
+import 'package:test_mobile/wrappers/non_authed_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

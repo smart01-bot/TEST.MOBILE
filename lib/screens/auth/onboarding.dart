@@ -56,7 +56,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
                               const SizedBox(height: 50),
                               Text(
-                                "Welcome to the \nC.A.R.D Informatics App",
+                                "Welcome to the \nTEST App",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color(0xff47688b),
